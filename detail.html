@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;">移动采编</h1>
+    <h2 style="text-align:center;">移动采编</h2>
     <div style="text-align: center; color:darkgray">（请使用Safari查看原网页）</div>
     <br /><br />
     <a id="link1" style="font-size:20px; line-height:30px; display: block; text-align: center;" href="">安装地址1</a>
@@ -45,11 +45,13 @@
 
         let showName = type == 1 ? name + "移动采编" : name
 
+        let plistPrefix = "itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/"
+
         $(document).ready(function() {
             $("title").text(showName)
-            $("h1").text(showName + 'iOS')
-            $("#link1").attr('href', 'itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/' + flag + '.plist')
-            $("#link2").attr('href', 'itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/' + flag + 'bit.plist')
+            $("h2").text(showName + 'iOS')
+            $("#link1").attr('href', plistPrefix + flag + '.plist')
+            $("#link2").attr('href', plistPrefix + flag + 'bit.plist')
         });
     }
 
