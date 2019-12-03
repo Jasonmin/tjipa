@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <script src="https://libs.baidu.com/jquery/1.3.2/jquery.min.js"></script>
 
-    <title>农民日报移动采编</title>
+    <title>移动采编</title>
     <STYLE TYPE="text/css">
         .div_foot {
             position: absolute;
@@ -18,10 +18,12 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;">农民日报移动采编</h1>
+    <h1 style="text-align:center;">移动采编</h1>
     <div style="text-align: center; color:darkgray">（请使用Safari查看原网页）</div>
     <br /><br />
-    <a id="link1" style="font-size:20px; line-height:30px; display: block; text-align: center;" href="itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/nmrb.plist">农民日报移动采编iOS下载</a>
+    <a id="link1" style="font-size:20px; line-height:30px; display: block; text-align: center;" href="">点击安装</a>
+    <br />
+    <a id="link2" style="font-size:20px; line-height:30px; display: block; text-align: center;" href="">安装地址2</a>
     <br />
     <div style="text-align: center; color:darkgray">（点击安装后请回到桌面等待安装完成）</div>
     <br /><br /><br /><br /><br />
@@ -45,15 +47,15 @@
 
         $(document).ready(function() {
             $("title").text(showName)
-            $("h1").text(showName)
-            $("#link1").text(showName + 'iOS下载')
+            $("h1").text(showName + 'iOS下载')
+            $("#link1").attr('href', 'itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/' + flag + '.plist')
+            $("#link1").attr('href', 'itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/' + flag + 'bit.plist')
         });
     }
 
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
         var r = window.location.search.substr(1).match(reg); //匹配目标参数
-        // if (r != null) return encodeURI(r[2]);
         if (r != null) return decodeURI(r[2]);
         return null; //返回参数值
     }
