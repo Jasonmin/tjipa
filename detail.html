@@ -21,7 +21,7 @@
     <h1 style="text-align:center;">农民日报移动采编</h1>
     <div style="text-align: center; color:darkgray">（请使用Safari查看原网页）</div>
     <br /><br />
-    <a style="font-size:20px; line-height:30px; display: block; text-align: center;" href="itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/951b3be8ba5c50272dd1078200e9448cca8f25aa/nmrb.plist">农民日报移动采编iOS下载</a>
+    <a id="link1" style="font-size:20px; line-height:30px; display: block; text-align: center;" href="itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/nmrb.plist">农民日报移动采编iOS下载</a>
     <br />
     <div style="text-align: center; color:darkgray">（点击安装后请回到桌面等待安装完成）</div>
     <br /><br /><br /><br /><br />
@@ -34,11 +34,20 @@
 </body>
 
 <script>
-    action1()
+    readParam()
 
-    function action1() {
-        let res = getUrlParam("flag")
-        alert(res)
+    function readParam() {
+        let name = getUrlParam("name")
+        let flag = getUrlParam("flag")
+        let type = getUrlParam("type")
+
+        let showName = type == 1 ? name + "移动采编" : name
+
+        $(document).ready(function() {
+            $("title").text(showName)
+            $("h1").text(showName)
+            $("#link1").text(showName + 'iOS下载')
+        });
     }
 
     function getUrlParam(name) {
