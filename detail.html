@@ -48,7 +48,7 @@
         let plistPrefix = "itms-services://?action=download-manifest&url=https://bitbucket.org/JasQ/ipalist/raw/master/"
 
         $(document).ready(function() {
-            $("title").text(showName)
+            $("title").text(showName + 'iOS')
             $("h2").text(showName + 'iOS')
             $("#link1").attr('href', plistPrefix + flag + '.plist')
             $("#link2").attr('href', plistPrefix + flag + 'bit.plist')
