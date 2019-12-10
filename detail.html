@@ -26,7 +26,11 @@
     <a id="link2" style="font-size:20px; line-height:30px; display: block; text-align: center;" href="">安装地址2</a>
     <br />
     <div style="text-align: center; color:darkgray">（点击安装后请回到桌面等待安装完成）</div>
-    <br /><br /><br /><br /><br />
+    <br /><br />
+    <p style="text-align: center;">
+        <img src="" width="180" height="180" />
+    </p>
+    <br /><br /><br />
     <div class="div_foot">
         <div style="text-align: center; color:darkgray; display: block; width:  auto;">
             太极计算机股份有限公司
@@ -42,6 +46,7 @@
         let name = getUrlParam("name")
         let flag = getUrlParam("flag")
         let type = getUrlParam("type")
+        let image = getUrlParam("image")
 
         let showName = type == 1 ? name + "移动采编" : name
 
@@ -52,6 +57,13 @@
             $("h2").text(showName + 'iOS')
             $("#link1").attr('href', plistPrefix + flag + '.plist')
             $("#link2").attr('href', plistPrefix + flag + 'bit.plist')
+            if (image == 1) {
+                let src = './img/' + flag + '.png'
+                console.log(src)
+                $("img").attr('src', src)
+            } else {
+                $("img").hide()
+            }
         });
     }
 
